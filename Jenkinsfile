@@ -12,9 +12,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Simulating deployment...'
-                sh 'mkdir -p /tmp/website'
-                sh 'cp index.html /tmp/website/'
-                echo 'Deployed index.html to /tmp/website/'
+                bat 'mkdir C:\\temp\\website'
+                bat 'copy myht.html C:\\temp\\website\\'
+                echo 'Deployed myht.html to C:\\temp\\website\\'
             }
         }
     }
