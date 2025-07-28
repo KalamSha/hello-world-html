@@ -3,7 +3,7 @@
 int main()
 {
 
-printf("hello cruel world and you\n");
+printf("hello cruel world and you\n")
 
 return 0;
 }
