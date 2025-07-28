@@ -9,15 +9,18 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Build C Program') {
             steps {
-                echo 'Simulating deployment...'
-                bat 'if not exist C:\\temp\\website mkdir C:\\temp\\website'
-                bat 'copy myht.html C:\\temp\\website\\myht.html /Y'
-                echo 'Deployed myht.html to C:\\temp\\website\\'
+                echo 'Compiling hello.c...'
+                bat 'gcc hello.c -o hello.exe'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo 'Running program...'
+                bat '.\\hello.exe'
             }
         }
     }
 }
-
-
